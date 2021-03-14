@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<h1>Furniture List</h1>
+{% for furniture in furniture %}
+  <div class="card">
+    <a href="{% url 'detail' furniture.id %}">
+      <div class="card-content">
+        <span class="card-title">{{ furniture.name }}</span>
+        <p>Description: {{ furniture.description }}</p>
+        {% if furniture.age > 10 %}
+          <p>Age: {{ furniture.age }}</p>
+        {% else %}
+          <p>Age: Old</p>
+        {% endif %}
+      </div>
+    </a>
+  </div>
+{% endfor %}
+
+{% endblock %}
