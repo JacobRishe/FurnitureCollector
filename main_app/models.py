@@ -1,5 +1,5 @@
 from django.db import models
-# from django.contrib.auth.models import User
+from django.contrib.auth.models import User
 
 # constant variable
 SUPPLIES = (
@@ -8,16 +8,21 @@ SUPPLIES = (
      ('C', 'Chainsaw')
 )
 
-
-
 # Create your models here.
+class Finish(models.Model):
+    name: models.CharField(max_length=30)
+    color: models.CharField(max_length=20)
 
+    def __str__(self):
+        return self.name
 
 class Furniture(models.Model):
     name = models.CharField(max_length=100)
     color = models.CharField(max_length=100)
     description = models.TextField(max_length=100)
     age = models.IntegerField()
+    finish = models.ManyToManyField(Finish)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return f"{self.name}"
@@ -37,14 +42,3 @@ class Destroy(models.Model):
 
     class Meta:
         ordering = ['-date']
-
-
-
-
-
-
-
-
-
-#just after toys
-# user = models.ForeignKey(User, on_delete=models.CASCADE)

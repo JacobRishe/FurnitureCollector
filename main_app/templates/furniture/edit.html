@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h1>Edit A Furniture</h1>
+
+  <form method="POST" action="{% url 'edit' furniture.id %}">
+    {% csrf_token %}
+    {{ cat_form.as_p }}
+    <input type="submit" class="btn" value="Edit Furniture">
+  </form>
+{% endblock content %}

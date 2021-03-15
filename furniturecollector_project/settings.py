@@ -78,8 +78,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'furniturecollector',
-        # 'USER': 'postgres',
-        # 'PASSWORD': 'JakeR12he',
+        'USER': 'postgres',
+        'PASSWORD': 'JakeR12he',
     }
 }
 
@@ -123,7 +123,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # Add this variable to specify where successful logins should redirect to
-# LOGIN_REDIRECT_URL = '/cats/'
+LOGIN_REDIRECT_URL = '/furniture/'
 
 # Add this variable to specify where logging out redirects to
-# LOGOUT_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
