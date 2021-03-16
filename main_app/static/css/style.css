@@ -2,13 +2,73 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  background: url('https://i.pinimg.com/originals/bc/97/bb/bc97bb1906523f98eb68e0396d6a9fe2.jpg') no-repeat;
+  background-size: cover;
 }
 
-main {
-  flex: 1 0 auto;
+.container {
+  margin-top: 100px;
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+tbody {
+  color: #fff;
+}
+
+h1, h3 {
+  color: #EE6E73;
+  text-shadow: 2px 2px #fff;
+}
+
+h5 {
+  color: #fff;
+}
+
+p {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 600;
+  text-shadow: 1.5px 1.5px #000;
+}
+
+thead, abbr {
+  color: #fff;
+}
+
+label {
+  color: #fff;
+  font-size: 20px;
+}
+
+.datepicker-table-wrapper {
+  background-color: #ee6e73;
+}
+
+input #id_name {
+  color: #fff;
+}
+
+.card .card-content {
+  background-color: #ee6e73;
+}
+
+.card .card-title {
+  color: #000;
+  font-weight: 600;
+}
+
+.form {
+  color: #fff;
+  background: rgb(238, 110, 115, 0.5);
+  padding: 20px;
+  text-align: left;
 }
 
 footer {
-  padding-top: 0;
-  text-align: right;
+  bottom: 0;
+  position: fixed;
+  justify-content: center;
+  width: 100vw;
+  display: flex;
 }

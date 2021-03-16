@@ -26,6 +26,7 @@ def furniture_new(request):
         new_furniture.save()
         return redirect('index')
     else:
+        print("hello")
         return render(request, 'furniture/new.html', { 'furniture_form': furniture_form })
 
 @login_required
@@ -50,12 +51,12 @@ def furniture_delete(request, cat_id):
 @login_required
 def furniture_detail(request, furniture_id):
     furniture = Furniture.objects.get(id=furniture_id)
-    finishes_furniture_doesnt_have = Finish.objects.exclude(id__in = furniture.finishes.all().values_list('id'))
+    finish_furniture_doesnt_have = Finish.objects.exclude(id__in = furniture.finish.all().values_list('id'))
     destroy_form = DestroyForm()
     context = {
     'furniture': furniture,
     'destroy_form': destroy_form,
-    'finishes': finishes_furniture_doesnt_have
+    'finishes': finish_furniture_doesnt_have
     }
     return render(request, 'furniture/detail.html', context)
 
